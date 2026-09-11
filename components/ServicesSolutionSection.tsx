@@ -1,55 +1,76 @@
-import { Car, UserCheck, Calendar } from "lucide-react";
+import Link from "next/link";
+import { Key, UserCheck, Bike, ArrowRight } from "lucide-react";
 
 export default function ServicesSolutionSection() {
   const services = [
     {
-      icon: Car,
-      title: "Lepas Kunci",
-      desc: "Sewa kendaraan untuk kebutuhan pribadi.",
+      icon: Key,
+      title: "Rental Lepas Kunci",
+      desc: "Fleksibilitas dan privasi maksimal menyetir sendiri untuk agenda keluarga, liburan, maupun urusan bisnis di Madiun.",
+      link: "/layanan#lepas-kunci",
     },
     {
       icon: UserCheck,
-      title: "Dengan Driver",
-      desc: "Untuk perjalanan yang membutuhkan pengemudi.",
+      title: "Sewa dengan Sopir",
+      desc: "Perjalanan bebas lelah bersama pengemudi berpengalaman yang paham rute Kota Madiun, Magetan, Ponorogo, dan Ngawi.",
+      link: "/layanan#dengan-driver",
     },
     {
-      icon: Calendar,
-      title: "Sewa Harian / Mingguan",
-      desc: "Pilihan durasi sesuai kebutuhan.",
+      icon: Bike,
+      title: "Rental Sepeda Motor",
+      desc: "Transportasi praktis, gesit, dan hemat bahan bakar untuk mobilitas harian di Madiun dengan fasilitas helm dan jas hujan.",
+      link: "/layanan#rental-motor",
     },
   ];
 
   return (
-    <section id="layanan" className="w-full py-16 lg:py-24 bg-slate-50 border-b border-slate-100">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Layanan Rental
-          </h2>
-          <p className="text-sm sm:text-base text-slate-500">
-            Pilihan layanan sewa kendaraan di Febri Trans.
-          </p>
+    <section className="py-16 md:py-20 bg-brand-surface border-b border-brand-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">
+              Layanan Rental Fleksibel
+            </h2>
+            <p className="mt-1.5 text-sm text-brand-muted max-w-[60ch]">
+              Pilihan sistem sewa lepas kunci maupun dengan sopir yang dapat disesuaikan dengan kebutuhan Anda.
+            </p>
+          </div>
+          <Link
+            href="/layanan"
+            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-dark hover:text-brand-accent transition-colors shrink-0 group whitespace-nowrap"
+          >
+            <span>Pelajari Semua Layanan</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
 
-        {/* 3 Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((item, idx) => {
             const IconComp = item.icon;
             return (
               <div
                 key={idx}
-                className="bg-white border border-slate-200 rounded-lg p-8 text-center flex flex-col items-center space-y-4 hover:border-slate-300 hover:shadow-sm transition-all duration-200"
+                className="bg-white border border-slate-200 rounded-lg p-7 flex flex-col justify-between hover:border-sky-400 hover:shadow-md transition-all group"
               >
-                <div className="w-14 h-14 rounded-lg bg-blue-50 text-[#0463bf] flex items-center justify-center">
-                  <IconComp className="w-7 h-7" />
+                <div>
+                  <div className="w-12 h-12 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 mb-5 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                    <IconComp className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 className="font-heading font-bold text-lg text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  {item.desc}
-                </p>
+
+                <Link
+                  href={item.link}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sky-600 hover:text-sky-700 transition-colors whitespace-nowrap "
+                >
+                  <span>Detail Layanan</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             );
           })}

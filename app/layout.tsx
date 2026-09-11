@@ -17,26 +17,30 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Febri Trans Madiun — Rental Mobil & Motor",
+  title: {
+    default: "Febri Trans Madiun — Rental Mobil & Motor Madiun",
+    template: "%s | Febri Trans Madiun",
+  },
   description:
-    "Rental mobil dan motor di Kota Madiun. Buka 24 jam. Rating 4,8 dari 297+ ulasan Google. WhatsApp 0857-0415-5999.",
+    "Layanan sewa mobil dan motor di Kota Madiun. Buka 24 jam. Siap lepas kunci atau dengan sopir. Rating 4,8 dari 297+ ulasan Google. WhatsApp: 0857-0415-5999.",
   keywords: [
     "Rental Mobil Madiun",
     "Sewa Mobil Madiun",
     "Rental Motor Madiun",
     "Sewa Avanza Madiun",
     "Sewa Innova Madiun",
+    "Sewa Brio Madiun",
     "Rental Mobil Lepas Kunci Madiun",
     "Febri Trans Madiun",
   ],
   authors: [{ name: "Febri Trans Madiun" }],
-  creator: "Febri Trans",
-  publisher: "Febri Trans",
+  creator: "Febri Trans Madiun",
+  publisher: "Febri Trans Madiun",
   metadataBase: new URL("https://febritrans.com"),
   openGraph: {
     title: "Febri Trans Madiun — Rental Mobil & Motor",
     description:
-      "Rental mobil dan motor di Kota Madiun. Buka 24 jam. Rating 4,8 dari 297+ ulasan Google.",
+      "Layanan sewa mobil dan motor di Kota Madiun. Buka 24 jam. Rating 4,8 dari 297+ ulasan Google.",
     url: "https://febritrans.com",
     siteName: "Febri Trans Madiun",
     locale: "id_ID",
@@ -54,7 +58,7 @@ export default function RootLayout({
       lang="id"
       className={`${outfit.variable} ${plusJakartaSans.variable} scroll-smooth`}
     >
-      <body className="bg-[#F7FAFC] text-[#2D3748] font-sans antialiased selection:bg-[#0463bf] selection:text-white">
+      <body className="bg-brand-bg text-brand-body font-sans antialiased min-h-screen flex flex-col">
         {children}
       </body>
     </html>

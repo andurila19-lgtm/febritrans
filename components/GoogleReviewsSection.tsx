@@ -1,19 +1,20 @@
 import { GOOGLE_REVIEWS_DATA, GOOGLE_MAPS_URL } from "@/data/fleet";
+import { Star, ExternalLink } from "lucide-react";
 
 export default function GoogleReviewsSection() {
   return (
-    <section className="w-full py-16 lg:py-24 bg-white border-b border-slate-100">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div className="space-y-2 max-w-xl">
-            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Ulasan Pelanggan
+    <section className="py-16 md:py-20 bg-white border-b border-brand-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-sky-600">
+              Reputasi & Kepuasan
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 tracking-tight">
+              Rating 4,8 dari 297+ Ulasan Google
             </h2>
-            <p className="text-sm sm:text-base text-slate-500">
-              Rating{" "}
-              <span className="font-semibold text-slate-800">4,8</span> dari{" "}
-              <span className="font-semibold text-slate-800">297+</span> ulasan di Google Maps.
+            <p className="mt-1.5 text-sm text-slate-600 max-w-[60ch]">
+              Ulasan asli dari pelanggan yang telah menggunakan jasa rental mobil dan motor Febri Trans di Madiun.
             </p>
           </div>
 
@@ -21,41 +22,34 @@ export default function GoogleReviewsSection() {
             href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold text-xs uppercase tracking-wider hover:bg-slate-50 transition-colors self-start md:self-end"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-800 hover:bg-sky-50 hover:text-sky-700 hover:border-sky-300 rounded transition-all shrink-0 whitespace-nowrap "
           >
-            <span>Lihat di Google Maps</span>
-            <span>↗</span>
+            <span>Buka Google Maps</span>
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
 
-        {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* 3 Review Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {GOOGLE_REVIEWS_DATA.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-slate-50 border border-slate-100 rounded-lg p-6 flex flex-col justify-between"
+              className="bg-white border border-slate-200 rounded-lg p-6 flex flex-col justify-between shadow-xs hover:border-amber-400 hover:shadow-md transition-all group"
             >
-              <div className="space-y-4">
-                {/* Stars */}
-                <div className="flex items-center gap-0.5 text-amber-400">
+              <div>
+                <div className="flex items-center gap-1 text-amber-400 mb-3">
                   {[...Array(rev.rating)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
+                    <Star key={i} className="w-4 h-4 fill-current text-amber-400" />
                   ))}
                 </div>
-
-                <blockquote className="text-sm text-slate-600 leading-relaxed">
+                <blockquote className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
                   &ldquo;{rev.text}&rdquo;
                 </blockquote>
               </div>
 
-              {/* Author */}
-              <div className="pt-5 mt-5 border-t border-slate-200">
-                <h4 className="font-heading font-semibold text-sm text-slate-800">
-                  {rev.name}
-                </h4>
-                <p className="text-xs text-slate-400">{rev.role}</p>
+              <div className="pt-4 mt-4 border-t border-slate-100">
+                <p className="font-bold text-xs sm:text-sm text-slate-900">{rev.name}</p>
+                <p className="text-[11px] text-slate-500">{rev.role}</p>
               </div>
             </div>
           ))}
