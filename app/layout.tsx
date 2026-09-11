@@ -17,31 +17,28 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "FEBRI TRANS | SEWA RENTAL MOBIL DINAS & MOTOR MADIUN",
+  title: "Febri Trans Madiun — Rental Mobil & Motor",
   description:
-    "Spesialis perjalanan bisnis, dinas, dan wisata di Kota Madiun & Jawa Timur. Siapkan armada mobil dan motor terawat serta sopir profesional. WhatsApp 0857-0415-5999 buka 24 jam.",
+    "Rental mobil dan motor di Kota Madiun. Buka 24 jam. Rating 4,8 dari 297+ ulasan Google. WhatsApp 0857-0415-5999.",
   keywords: [
     "Rental Mobil Madiun",
-    "Sewa Mobil Dinas Madiun",
-    "Rental Mobil Madiun Murah",
-    "Sewa Avanza Madiun",
-    "Sewa Innova Reborn Madiun",
-    "Sewa Innova Zenix Madiun",
-    "Rental Hiace Madiun",
+    "Sewa Mobil Madiun",
     "Rental Motor Madiun",
+    "Sewa Avanza Madiun",
+    "Sewa Innova Madiun",
     "Rental Mobil Lepas Kunci Madiun",
     "Febri Trans Madiun",
   ],
-  authors: [{ name: "CV FEBRI TRANS MADIUN" }],
+  authors: [{ name: "Febri Trans Madiun" }],
   creator: "Febri Trans",
   publisher: "Febri Trans",
   metadataBase: new URL("https://febritrans.com"),
   openGraph: {
-    title: "FEBRI TRANS | SEWA RENTAL MOBIL DINAS & MOTOR MADIUN",
+    title: "Febri Trans Madiun — Rental Mobil & Motor",
     description:
-      "Spesialis perjalanan bisnis, dinas, dan wisata Madiun Raya. Armada prima, sopir profesional, harga transparan, dan dokumen invoice resmi.",
+      "Rental mobil dan motor di Kota Madiun. Buka 24 jam. Rating 4,8 dari 297+ ulasan Google.",
     url: "https://febritrans.com",
-    siteName: "FEBRI TRANS Madiun",
+    siteName: "Febri Trans Madiun",
     locale: "id_ID",
     type: "website",
   },
